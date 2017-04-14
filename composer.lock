@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "edc399df50c0f49476b48db6723acf04",
+    "content-hash": "068ac6257948f94f86e9633478f3b5e5",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -1326,12 +1326,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/phpcr-odm.git",
-                "reference": "4e680b61d4130fa23db5df8cf6dc0010367311a0"
+                "reference": "1d5142f871c89c8cc24287c9bb8e98ca3859d37f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/phpcr-odm/zipball/4e680b61d4130fa23db5df8cf6dc0010367311a0",
-                "reference": "4e680b61d4130fa23db5df8cf6dc0010367311a0",
+                "url": "https://api.github.com/repos/doctrine/phpcr-odm/zipball/1d5142f871c89c8cc24287c9bb8e98ca3859d37f",
+                "reference": "1d5142f871c89c8cc24287c9bb8e98ca3859d37f",
                 "shasum": ""
             },
             "require": {
@@ -1351,13 +1351,13 @@
             },
             "require-dev": {
                 "liip/rmt": "~1.2",
-                "phpunit/phpunit": "*",
+                "phpunit/phpunit": "^4.8|5.*",
                 "symfony/phpunit-bridge": "^2.7|^3.0",
                 "symfony/yaml": "^2.3|^3.0"
             },
             "suggest": {
-                "jackalope/jackalope-doctrine-dbal": "^1.1.5",
-                "jackalope/jackalope-jackrabbit": "^1.0",
+                "jackalope/jackalope-doctrine-dbal": "^1.3.0",
+                "jackalope/jackalope-jackrabbit": "^1.3.0",
                 "symfony/yaml": "^2.3|^3.0"
             },
             "bin": [
@@ -1400,7 +1400,7 @@
                 "odm",
                 "phpcr"
             ],
-            "time": "2017-02-09 12:15:02"
+            "time": "2017-04-07 17:06:37"
         },
         {
             "name": "friendsofsymfony/oauth-server-bundle",
@@ -2084,16 +2084,16 @@
         },
         {
             "name": "jackalope/jackalope",
-            "version": "1.3.0",
+            "version": "1.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jackalope/jackalope.git",
-                "reference": "36fab3697478bd9f7f6554cb5ebc53cd1d36b24f"
+                "reference": "4733f139197e59dbc4f6ac1a3e057c61abf2b14f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jackalope/jackalope/zipball/36fab3697478bd9f7f6554cb5ebc53cd1d36b24f",
-                "reference": "36fab3697478bd9f7f6554cb5ebc53cd1d36b24f",
+                "url": "https://api.github.com/repos/jackalope/jackalope/zipball/4733f139197e59dbc4f6ac1a3e057c61abf2b14f",
+                "reference": "4733f139197e59dbc4f6ac1a3e057c61abf2b14f",
                 "shasum": ""
             },
             "require": {
@@ -2136,7 +2136,7 @@
             "keywords": [
                 "phpcr"
             ],
-            "time": "2017-04-07T09:37:04+00:00"
+            "time": "2017-04-18T05:52:45+00:00"
         },
         {
             "name": "jackalope/jackalope-doctrine-dbal",
@@ -2402,16 +2402,16 @@
         },
         {
             "name": "jms/serializer",
-            "version": "1.6.0",
+            "version": "1.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/serializer.git",
-                "reference": "5e9008cbb0bac2986979d905a87ae48efcf578c4"
+                "reference": "b8683d206e7297f54034f67a877f966c14dc12ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/5e9008cbb0bac2986979d905a87ae48efcf578c4",
-                "reference": "5e9008cbb0bac2986979d905a87ae48efcf578c4",
+                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/b8683d206e7297f54034f67a877f966c14dc12ea",
+                "reference": "b8683d206e7297f54034f67a877f966c14dc12ea",
                 "shasum": ""
             },
             "require": {
@@ -2477,7 +2477,7 @@
                 "serialization",
                 "xml"
             ],
-            "time": "2017-03-24T13:11:23+00:00"
+            "time": "2017-04-17T15:27:46+00:00"
         },
         {
             "name": "jms/serializer-bundle",
@@ -2993,12 +2993,12 @@
             "version": "0.9.9",
             "source": {
                 "type": "git",
-                "url": "https://github.com/padraic/mockery.git",
+                "url": "https://github.com/mockery/mockery.git",
                 "reference": "6fdb61243844dc924071d3404bb23994ea0b6856"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/padraic/mockery/zipball/6fdb61243844dc924071d3404bb23994ea0b6856",
+                "url": "https://api.github.com/repos/mockery/mockery/zipball/6fdb61243844dc924071d3404bb23994ea0b6856",
                 "reference": "6fdb61243844dc924071d3404bb23994ea0b6856",
                 "shasum": ""
             },
@@ -7645,16 +7645,16 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.6.0",
+            "version": "1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "5a5a9fc8025a08d8919be87d6884d5a92520cefe"
+                "reference": "8e6e04167378abf1ddb4d3522d8755c5fd90d102"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/5a5a9fc8025a08d8919be87d6884d5a92520cefe",
-                "reference": "5a5a9fc8025a08d8919be87d6884d5a92520cefe",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/8e6e04167378abf1ddb4d3522d8755c5fd90d102",
+                "reference": "8e6e04167378abf1ddb4d3522d8755c5fd90d102",
                 "shasum": ""
             },
             "require": {
@@ -7683,7 +7683,7 @@
                 "object",
                 "object graph"
             ],
-            "time": "2017-01-26T22:05:40+00:00"
+            "time": "2017-04-12T18:52:22+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -8452,6 +8452,45 @@
                 "psr"
             ],
             "time": "2017-02-14T16:28:37+00:00"
+        },
+        {
+            "name": "se/selenium-server-standalone",
+            "version": "v2.53.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sveneisenschmidt/selenium-server-standalone.git",
+                "reference": "ef4eea9c99efb9c0e3084e9cae625662ccd43361"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sveneisenschmidt/selenium-server-standalone/zipball/ef4eea9c99efb9c0e3084e9cae625662ccd43361",
+                "reference": "ef4eea9c99efb9c0e3084e9cae625662ccd43361",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "bin": [
+                "bin/selenium-server-standalone"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache 2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Sven Eisenschmidt",
+                    "email": "sven.eisenschmidt@gmail.com"
+                }
+            ],
+            "description": "Composer distribution of Selenium Server Standalone, the browser automation framework. Adds a executable to your composer bin directory.",
+            "homepage": "https://github.com/sveneisenschmidt/selenium-server-standalone",
+            "keywords": [
+                "selenium",
+                "testing"
+            ],
+            "time": "2016-07-01T14:16:52+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",

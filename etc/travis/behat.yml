@@ -1,0 +1,29 @@
+imports: ["behat.yml.dist"]
+
+default:
+    extensions:
+        Behat\MinkExtension:
+            base_url: "http://localhost:8080/"
+            default_session: symfony
+            javascript_session: chromium
+            sessions:
+                symfony:
+                    symfony: ~
+                chromium:
+                    selenium2:
+                        browser: chrome
+                        capabilities:
+                            browserName: chrome
+                            browser: chrome
+                            version: ""
+                            chrome:
+                                binary: "/usr/bin/chromium-browser"
+                                switches:
+                                    - "start-fullscreen"
+                                    - "start-maximized"
+                                    - "no-sandbox"
+            show_auto: false
+
+    gherkin:
+        filters:
+            tags: "~@todo"

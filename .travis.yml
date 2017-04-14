@@ -1,25 +1,45 @@
 language: php
 
 php:
-    - 7.1
+    - 7.1.0
     - 7.0
     - 5.6
 
 cache:
     directories:
         - ~/.composer/cache/files
+        - vendor
 
 before_install:
     - phpenv config-rm xdebug.ini || true
     - echo "memory_limit=4096M" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
 
+    - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install stable
+
 install:
-    - composer update --prefer-dist
+    - composer install --no-interaction --no-suggest --no-progress --no-scripts --prefer-dist
 
     - tests/Application/bin/console doctrine:schema:create --env=test -vvv --no-interaction
     - tests/Application/bin/console doctrine:phpcr:repository:init --env=test -vvv --no-interaction
 
-script:
-    - composer validate
+    - (cd tests/Application && npm update --quiet)
 
-    - vendor/bin/behat --strict -vvv --no-interaction || vendor/bin/behat --strict -vvv --no-interaction --rerun
+before_script:
+    - (cd tests/Application && npm run gulp)
+    - cp etc/travis/behat.yml ./behat.yml
+
+    - /sbin/start-stop-daemon --start --quiet --pidfile /tmp/xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1680x1050x16
+    - export DISPLAY=:99
+
+    - \[ -f chromedriver \] || curl http://chromedriver.storage.googleapis.com/2.12/chromedriver_linux64.zip > chromedriver.zip && unzip chromedriver.zip
+    - vendor/bin/selenium-server-standalone -Dwebdriver.chrome.driver=chromedriver > /dev/null 2>&1 &
+
+    - (cd tests/Application && bin/console server:run 127.0.0.1:8080 --router="tests/Application/app/config/router_test.php" --env=test --quiet > /dev/null 2>&1 &)
+
+script:
+    - composer validate --no-check-all --strict
+
+    - vendor/bin/behat --strict -vvv -f progress --no-interaction --tags="~@javascript" || vendor/bin/behat --strict -vvv -f progress --no-interaction --tags="~@javascript" --rerun
+
+notifications:
+    email: false

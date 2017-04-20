@@ -3,7 +3,7 @@ imports: ["behat.yml.dist"]
 default:
     extensions:
         Behat\MinkExtension:
-            base_url: "http://localhost:8080/"
+            base_url: placeholder
             default_session: symfony
             javascript_session: chromium
             sessions:

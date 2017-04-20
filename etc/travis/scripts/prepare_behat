@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -e
+
+cp etc/travis/behat.yml ./behat.yml
+sed -i -e 's/placeholder/http:\/\/'${TEST_BASE_URL}'/g' ./behat.yml

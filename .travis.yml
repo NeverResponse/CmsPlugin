@@ -1,5 +1,9 @@
 language: php
 
+env:
+    global:
+        - TEST_BASE_URL=127.0.0.1:8080
+
 php:
     - 7.1.0
     - 7.0
@@ -26,7 +30,7 @@ install:
 
 before_script:
     - (cd tests/Application && npm run gulp)
-    - cp etc/travis/behat.yml ./behat.yml
+    - etc/travis/scripts/prepare_behat
 
     - /sbin/start-stop-daemon --start --quiet --pidfile /tmp/xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1680x1050x16
     - export DISPLAY=:99
@@ -34,12 +38,13 @@ before_script:
     - \[ -f chromedriver \] || curl http://chromedriver.storage.googleapis.com/2.12/chromedriver_linux64.zip > chromedriver.zip && unzip chromedriver.zip
     - vendor/bin/selenium-server-standalone -Dwebdriver.chrome.driver=chromedriver > /dev/null 2>&1 &
 
-    - (cd tests/Application && bin/console server:run 127.0.0.1:8080 --router="tests/Application/app/config/router_test.php" --env=test --quiet > /dev/null 2>&1 &)
+    - (cd tests/Application && bin/console server:run "${TEST_BASE_URL}" --router="tests/Application/app/config/router_test.php" --env=test --quiet > /dev/null 2>&1 &)
 
 script:
     - composer validate --no-check-all --strict
 
     - vendor/bin/behat --strict -vvv -f progress --no-interaction --tags="~@javascript" || vendor/bin/behat --strict -vvv -f progress --no-interaction --tags="~@javascript" --rerun
+    - vendor/bin/behat --strict -vvv -f progress --no-interaction --tags="@javascript" || vendor/bin/behat --strict -vvv -f progress --no-interaction --tags="@javascript" --rerun
 
 notifications:
     email: false

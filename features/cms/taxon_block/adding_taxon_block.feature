@@ -8,7 +8,7 @@ Feature: Adding a new taxon block
         Given the store has "Heron" taxonomy
         And I am logged in as an administrator
 
-    @ui @javascript @todo
+    @ui @javascript
     Scenario: Adding a new taxon block
         Given I want to add a new taxon block
         When I set its name to "free-shipping-for-herons"
